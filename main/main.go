@@ -1,20 +1,26 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
-
-	_ "github.com/go-sql-driver/mysql"
+	"html/template"
+	"net/http"
 )
 
-func main() {
-	fmt.Println("hi")
-
-	db, err := sql.Open("mysql", "user:password@/dbname")
+func mainPage(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("templates/index.html")
 	if err != nil {
-		panic(err)
+		fmt.Println(w, err.Error())
+		return
 	}
-	db.SetConnMaxLifetime(20 * 3)
-	db.SetMaxOpenConns(10)
-	db.SetMaxIdleConns(10)
+	t.ExecuteTemplate(w, "index", nil)
+}
+
+func main() {
+	HandleFunc()
+}
+
+func HandleFunc() {
+	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir("./templates/"))))
+	http.HandleFunc("/", mainPage)
+	http.ListenAndServe(":3000", nil)
 }
