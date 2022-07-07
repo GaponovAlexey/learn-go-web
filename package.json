@@ -1,7 +1,7 @@
 {
   "name": "learn-go-web",
   "version": "1.0.0",
-  "main": "api/index.js",
+  "main": "index.js",
   "repository": "https://github.com/GaponovAlexey/learn-go-web",
   "author": "GaponovAlexey",
   "license": "MIT",
