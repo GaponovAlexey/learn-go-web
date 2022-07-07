@@ -1,7 +1,7 @@
 {
   "name": "GoWebPage",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "templates/index.js",
   "repository": "https://github.com/GaponovAlexey/template-go-vercel",
   "author": "GaponovAlexey",
   "license": "MIT",
