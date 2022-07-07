@@ -1,273 +1,106 @@
-{{define "index"}}
 <!DOCTYPE html>
-<html lang="en" class="js">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
-    <link rel="stylesheet" type="text/css" href="templates/css/default.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="templates/css/multilevelmenu.css"
-    />
-    <link rel="stylesheet" type="text/css" href="templates/css/component.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="templates/css/animations.css"
-    />
-    <script src="templates/js/modernizr.custom.js"></script>
+    <title>template-go-vercel</title>
+    <style>
+      *,
+      :after,
+      :before {
+        box-sizing: border-box;
+        border: 0 solid;
+      }
+      
+      html {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      }
+      body {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1 {
+        font-size: 1.6285714em;
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+        line-height: 1.4;
+      }
+
+      a {
+        display: block;
+        font-size: 1.2857143em;
+        margin-top: 1.5555556em;
+        margin-bottom: 0.4444444em;
+        line-height: 1.5555556;
+        text-decoration: underline;
+        font-weight: 500;
+        color: #111827;
+      }
+    </style>
   </head>
   <body>
-    <div class="pt-triggers">
-      <button id="iterateEffects" class="pt-touch-button">Next Page</button>
-      <div id="dl-menu" class="dl-menuwrapper">
-        <button class="dl-trigger">Select</button>
-        <ul class="dl-menu">
-          <li>
-            <a href="#">Move</a>
-            <ul class="dl-submenu">
-              <li data-animation="1">
-                <a href="#">Move to left/ from right</a>
-              </li>
-              <li data-animation="2">
-                <a href="#">Move to right/ from left</a>
-              </li>
-              <li data-animation="3">
-                <a href="#">Move to top/ from bottom</a>
-              </li>
-              <li data-animation="4">
-                <a href="#">Move to bottom/ from top</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Fade</a>
-            <ul class="dl-submenu">
-              <li data-animation="5"><a href="#">Fade / from right</a></li>
-              <li data-animation="6"><a href="#">Fade / from left</a></li>
-              <li data-animation="7"><a href="#">Fade / from bottom</a></li>
-              <li data-animation="8"><a href="#">Fade / from top</a></li>
-              <li data-animation="9"><a href="#">Fade left / Fade right</a></li>
-              <li data-animation="10">
-                <a href="#">Fade right / Fade left</a>
-              </li>
-              <li data-animation="11">
-                <a href="#">Fade top / Fade bottom</a>
-              </li>
-              <li data-animation="12">
-                <a href="#">Fade bottom / Fade top</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Different easing</a>
-            <ul class="dl-submenu">
-              <li data-animation="13">
-                <a href="#">Different easing / from right</a>
-              </li>
-              <li data-animation="14">
-                <a href="#">Different easing / from left</a>
-              </li>
-              <li data-animation="15">
-                <a href="#">Different easing / from bottom</a>
-              </li>
-              <li data-animation="16">
-                <a href="#">Different easing / from top</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Scale</a>
-            <ul class="dl-submenu">
-              <li data-animation="17">
-                <a href="#">Scale down / from right</a>
-              </li>
-              <li data-animation="18">
-                <a href="#">Scale down / from left</a>
-              </li>
-              <li data-animation="19">
-                <a href="#">Scale down / from bottom</a>
-              </li>
-              <li data-animation="20"><a href="#">Scale down / from top</a></li>
-              <li data-animation="21">
-                <a href="#">Scale down / scale down</a>
-              </li>
-              <li data-animation="22"><a href="#">Scale up / scale up</a></li>
-              <li data-animation="23">
-                <a href="#">Move to left / scale up</a>
-              </li>
-              <li data-animation="24">
-                <a href="#">Move to right / scale up</a>
-              </li>
-              <li data-animation="25">
-                <a href="#">Move to top / scale up</a>
-              </li>
-              <li data-animation="26">
-                <a href="#">Move to bottom / scale up</a>
-              </li>
-              <li data-animation="27"><a href="#">Scale down / scale up</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Rotate</a>
-            <ul class="dl-submenu">
-              <li>
-                <a href="#">Glue</a>
-                <ul class="dl-submenu">
-                  <li data-animation="28">
-                    <a href="#">Glue left / from right</a>
-                  </li>
-                  <li data-animation="29">
-                    <a href="#">Glue right / from left</a>
-                  </li>
-                  <li data-animation="30">
-                    <a href="#">Glue bottom / from top</a>
-                  </li>
-                  <li data-animation="31">
-                    <a href="#">Glue top / from bottom</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Flip</a>
-                <ul class="dl-submenu">
-                  <li data-animation="32"><a href="#">Flip right</a></li>
-                  <li data-animation="33"><a href="#">Flip left</a></li>
-                  <li data-animation="34"><a href="#">Flip top</a></li>
-                  <li data-animation="35"><a href="#">Flip bottom</a></li>
-                </ul>
-              </li>
-              <li data-animation="36"><a href="#">Fall</a></li>
-              <li data-animation="37"><a href="#">Newspaper</a></li>
-              <li>
-                <a href="#">Push / Pull</a>
-                <ul class="dl-submenu">
-                  <li data-animation="38">
-                    <a href="#">Push left / from right</a>
-                  </li>
-                  <li data-animation="39">
-                    <a href="#">Push right / from left</a>
-                  </li>
-                  <li data-animation="40">
-                    <a href="#">Push top / from bottom</a>
-                  </li>
-                  <li data-animation="41">
-                    <a href="#">Push bottom / from top</a>
-                  </li>
+    <h1>Serverless Functions made with Go!</h1>
+    <h1>For FREE on Vercel.com</h1>
+    <a
+      href="https://github.com/riccardogiorato/template-go-vercel"
+      rel="noopener noreferrer"
+      target="_blank"
+      style="display: flex; align-items: center"
+    >
+      Github
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 17 16"
+        fill="none"
+        style="width: 22px; height: 22px; margin-left: 10px"
+      >
+        <g clip-path="url(githublogo)" class="jsx-2562017125">
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M8.18391.249268C3.82241.249268.253906 3.81777.253906 8.17927c0 3.46933 2.279874 6.44313 5.451874 7.53353.3965.0991.49563-.1983.49563-.3965v-1.3878c-2.18075.4956-2.67638-.9912-2.67638-.9912-.3965-.8922-.89212-1.1895-.89212-1.1895-.69388-.4957.09912-.4957.09912-.4957.793.0992 1.1895.793 1.1895.793.69388 1.2887 1.88338.8922 2.27988.6939.09912-.4956.29737-.8921.49562-1.0904-1.78425-.1982-3.5685-.8921-3.5685-3.96496 0-.89212.29738-1.586.793-2.08162-.09912-.19825-.3965-.99125.09913-2.08163 0 0 .69387-.19825 2.18075.793.59475-.19825 1.28862-.29737 1.9825-.29737.69387 0 1.38775.09912 1.98249.29737 1.4869-.99125 2.1808-.793 2.1808-.793.3965 1.09038.1982 1.88338.0991 2.08163.4956.59475.793 1.28862.793 2.08162 0 3.07286-1.8834 3.66766-3.66764 3.86586.29737.3965.59474.8921.59474 1.586v2.1808c0 .1982.0991.4956.5948.3965 3.172-1.0904 5.4518-4.0642 5.4518-7.53353-.0991-4.3615-3.6676-7.930002-8.02909-7.930002z"
+            clip-rule="evenodd"
+            class="jsx-2562017125"
+          ></path>
+        </g>
+        <defs class="jsx-2562017125">
+          <clipPath id="githublogo" class="jsx-2562017125">
+            <path
+              fill="transparent"
+              d="M0 0h15.86v15.86H0z"
+              transform="translate(.253906 .0493164)"
+              class="jsx-2562017125"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </a>
+    <br />
 
-                  <li data-animation="42">
-                    <a href="#">Push left / pull right</a>
-                  </li>
-                  <li data-animation="43">
-                    <a href="#">Push right / pull left</a>
-                  </li>
-                  <li data-animation="44">
-                    <a href="#">Push top / pull bottom</a>
-                  </li>
-                  <li data-animation="45">
-                    <a href="#">Push bottom / pull top</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Fold / Unfold</a>
-                <ul class="dl-submenu">
-                  <li data-animation="46">
-                    <a href="#">Fold left / from right</a>
-                  </li>
-                  <li data-animation="47">
-                    <a href="#">Fold right / from left</a>
-                  </li>
-                  <li data-animation="48">
-                    <a href="#">Fold top / from bottom</a>
-                  </li>
-                  <li data-animation="49">
-                    <a href="#">Fold bottom / from top</a>
-                  </li>
-                  <li data-animation="50">
-                    <a href="#">Move to right / unfold left</a>
-                  </li>
-                  <li data-animation="51">
-                    <a href="#">Move to left / unfold right</a>
-                  </li>
-                  <li data-animation="52">
-                    <a href="#">Move to bottom / unfold top</a>
-                  </li>
-                  <li data-animation="53">
-                    <a href="#">Move to top / unfold bottom</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Room</a>
-                <ul class="dl-submenu">
-                  <li data-animation="54"><a href="#">Room to left</a></li>
-                  <li data-animation="55"><a href="#">Room to right</a></li>
-                  <li data-animation="56"><a href="#">Room to top</a></li>
-                  <li data-animation="57"><a href="#">Room to bottom</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Cube</a>
-                <ul class="dl-submenu">
-                  <li data-animation="58"><a href="#">Cube to left</a></li>
-                  <li data-animation="59"><a href="#">Cube to right</a></li>
-                  <li data-animation="60"><a href="#">Cube to top</a></li>
-                  <li data-animation="61"><a href="#">Cube to bottom</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Carousel</a>
-                <ul class="dl-submenu">
-                  <li data-animation="62"><a href="#">Carousel to left</a></li>
-                  <li data-animation="63"><a href="#">Carousel to right</a></li>
-                  <li data-animation="64"><a href="#">Carousel to top</a></li>
-                  <li data-animation="65">
-                    <a href="#">Carousel to bottom</a>
-                  </li>
-                </ul>
-              </li>
-              <li data-animation="66"><a href="#">Sides</a></li>
-            </ul>
-          </li>
-          <li data-animation="67"><a href="#">Slide</a></li>
-        </ul>
-      </div>
-      <!-- /dl-menu-wrapper-->
-    </div>
-    <!-- /triggers -->
+    <a href="/api/date"> Serverless Function print current Date </a>
+    <a href="/api/hello"> Serverless Function print "Hello World!" </a>
+    <a href="/api/json"> Serverless Function print JSON </a>
 
-    <div id="pt-main" class="pt-perspective">
-      <div class="pt-page pt-page-1">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-      <div class="pt-page pt-page-2">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-      <div class="pt-page pt-page-3">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-      <div class="pt-page pt-page-4">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-      <div class="pt-page pt-page-5">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-      <div class="pt-page pt-page-6">
-        <h1><span>A collection of</span><strong>Page</strong> Transitions</h1>
-      </div>
-    </div>
+    <br />
 
-    <div class="pt-message">
-      <p>Your browser does not support CSS animations.</p>
-    </div>
+    <a href="https://go.dev/dl/" rel="noopener noreferrer" target="_blank">
+      Download Go: https://go.dev/dl/
+    </a>
+    <br />
+    <br />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="templates/js/jquery.dlmenu.js"></script>
-    <script src="templates/js/pagetransitions.js"></script>
+    <a
+      href="https://www.riccardogiorato.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+      style="color: rgb(59, 130, 246)"
+    >
+      Created by @riccardogiorato
+    </a>
   </body>
 </html>
-{{end}}
