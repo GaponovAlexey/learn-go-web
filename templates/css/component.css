@@ -39,7 +39,7 @@ html, body { height: 100%; }
 }
 
 .pt-page-ontop {
-	z-index: 999;
+	z-index: 2;
 }
 
 /* Text Styles, Colors, Backgrounds */
@@ -70,11 +70,11 @@ html, body { height: 100%; }
 }
 
 .pt-page h1 strong {
-	color: rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.2);
 }
 
 .pt-page-1 {
-	background: #0ac2d2;
+	background: #fdc162;
 }
 
 .pt-page-2 {
@@ -102,6 +102,7 @@ html, body { height: 100%; }
 .pt-triggers {
 	position: absolute;
 	width: 300px;
+	border-radius: 3rem;
 	z-index: 999999;
 	top: 12%;
 	left: 50%;
